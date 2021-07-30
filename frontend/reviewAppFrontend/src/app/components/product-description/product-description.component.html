@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <button class="btn btnDesign" style="margin-bottom: 3vh;" [routerLink]="['/dashboardAuth']" routerLinkActive="router-link-active" >Back</button>
+    <div class="viewProd">
+        <div class="content">  
+            <div class="content__left">
+                <h3 class="mt-3" style="color:#F54748"><u>Product Info</u></h3>
+
+                <div class="content__leftHeader mt-3" style="background-color: #f7c76eb6; padding: 10px; border-radius: 5%;;">
+                    <span>Model Number: {{fetchedProduct.productid}}</span>
+                    <h5>Brand: {{fetchedProduct.brand}}</h5>
+                    <h3>{{fetchedProduct.productname}}</h3>
+                    <h5>Price: {{fetchedProduct.productprice | currency:"INR" }}</h5>
+                    <h5 class="mt-5">About Product</h5>
+                    <span>{{fetchedProduct.productdetail}}</span>
+                </div>
+            </div>
+            <div class="content__right">
+                <div class="content__rightImage">
+                    <img style="border-radius: 10%;" class="img-fluid img-rounded" height="100" width="350" src="http://localhost:8081/api/productImage/{{fetchedProduct.productid}}" alt="Product Image">
+                </div>
+                <div class="content__right__button" style="margin-top:5vh">
+                    <button class="btn btnDesign" style="margin-left: 5vw;;">Buy Now</button>
+                    <button class="btn btnDesign" style="margin-left:2vw">Add to Cart</button>
+                </div>     
+                <button class="btn btnDesign" style="margin-left:7vw;margin-top: 4vh;" routerLink='/postReview/{{fetchedProduct.productid}}' routerLinkActive="router-link-active" >Add Your Review</button>
+            </div>  
+        </div>
+
+        <div style="margin-top: 8vh;">
+            <hr>
+        </div>
+
+        <div style="display: flex; flex-direction: row;">
+            <h3 class="mt-3" style="color:#F54748"><u>Reviews</u></h3>
+        </div>
+        
+        <div class="container" *ngFor="let review of fetchedReviews">
+            <div class="reviewsContent mt-4" style=""style="background-color: #f7c76eb6; padding: 20px; border-radius: 10%;">
+                <h5>{{review.reviewTitle}}</h5>
+                <div style="padding:13px;">
+                    <span>{{review.reviewContent}}</span><br>
+                </div>
+                <span style="margin-top: 5vh;" class="text-muted">--{{review.userName}}</span>
+                <hr>
+            </div>
+
+         </div>
+    </div>
+    <!-- <img src="http://localhost:8081/api/productImage/{{fetchedProduct.productid}}" alt="None"> -->
+</div>

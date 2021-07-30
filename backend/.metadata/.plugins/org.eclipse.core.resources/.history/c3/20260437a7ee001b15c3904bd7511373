@@ -1,0 +1,18 @@
+package com.nagarro.backendApp.reviewApp.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="productimage")
+public class ProductImage {
+	
+	@Id
+	@Column(name="productid")
+	long productid;
+	@Column(name="productimage")
+	java.sql.Blob productimage;
+
+}

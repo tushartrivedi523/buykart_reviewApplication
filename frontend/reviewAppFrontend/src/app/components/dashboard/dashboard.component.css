@@ -1,0 +1,84 @@
+.btnDesign{
+    background-color: #f3ce88;
+    color:#F54748;
+}
+.btnDesign:hover{
+    background-color: #ffc14e;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-around;
+
+}
+.stat{
+    display: flex;
+}
+.stat__text {
+    margin-left: 2vw!important;
+}
+
+
+.cardBody__flex{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+
+
+.searchForms{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8%;;
+}
+
+
+.productDisp{
+    display: flex;
+    flex-direction: row!important;
+    flex-wrap: wrap;
+}
+.productDisps{
+    width:50%;
+    flex-wrap: wrap;
+    
+
+}
+.productCard{
+
+    /* position:  */
+    cursor: pointer;
+    background-color: #F5E6CA;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 13px;
+    padding-right: 13px;
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.productCard:hover{
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s;
+ }
+.productCard__left{
+    justify-content: flex-start;
+    /* width: 78%; */
+    display: flex;
+    flex-direction: column;
+    /* margin-top: -5px; */
+}
+.productCard__right{
+    align-items: flex-end;
+    margin-left: 10vw;
+    text-align: end;
+    /* width: 20%; */
+    margin-top: 4vh;
+    margin-right: 1vw;
+}

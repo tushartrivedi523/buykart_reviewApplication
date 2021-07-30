@@ -1,0 +1,132 @@
+<div class="container mt-3" style="background-color: #F5E6CA; margin-top: 2vh; padding:35px; border-radius: 10%; border:2px solid #FB9300">
+    <div class="jumbotron jumbotron-fluid" style="border-radius: 10%;">
+        <h1 class="display-6">Hello, {{userFirstName | titlecase}}</h1>
+        <p class="lead"><b>Plus Member</b> Day Sale Live!!</p>
+        <p><iframe src="https://free.timeanddate.com/countdown/i7wvaup6/n1862/cf12/cm0/cu4/ct2/cs0/ca0/co1/cr0/ss0/cacf54748/cpc000/pcf5e6ca/tcfff/fs120/szw576/szh243/tatSale%20Ends%20in/tacf54748/tptTime%20since%20Event%20started%20in/tpc000/iso2021-08-05T00:00:00/pl20/pr20/pt3/pb3" allowtransparency="true" frameborder="0" width="273" height="111"></iframe></p>
+        <hr class="my-4">
+        <p>Want to become <b>Buykart Plus Member?</b> Enjoy free delivery, upto <b>70% off</b> in any purchase.</p>
+        <p class="lead">
+          <a class="btn btnDesign btn-md"  role="button">Join Buykart Plus Now</a>
+        </p>
+    </div>    
+</div>
+  
+    <div class="container">
+      <h3 class="mt-5 mb-3 animate__animated  animate__infinite	infinite animate__bounce"style="color:#F54748">Hot Selling Products</h3>
+      <div class="card" style="background-color: #F5E6CA;">
+        <h5 class="card-header text-center "style="background-color: #fb9200b4;">Featured Product</h5>
+        <div class="cardBody__flex">
+          <div class="card-body">
+            <span>{{productList[4].brand}}</span>
+            <h5 class="card-title">{{productList[4].productname}}</h5>
+            <p class="card-text">{{productList[4].productprice|currency:"INR"}}</p>
+            <a class="btn btnDesign" routerLink="/productDesp/{{productList[4].productid}}">View Product</a>
+          </div>
+          <div class="card-body">
+            <span>{{productList[2].brand}}</span>
+            <h5 class="card-title">{{productList[2].productname}}</h5>
+            <p class="card-text">{{productList[2].productprice|currency:"INR"}}</p>
+            <a  class="btn btnDesign" routerLink="/productDesp/{{productList[2].productid}}" >View Product</a>
+          </div>
+          <div class="card-body">
+            <span>{{productList[0].brand}}</span>
+            <h5 class="card-title">{{productList[0].productname}}</h5>
+            <p class="card-text">{{productList[0].productprice|currency:"INR"}}</p>
+            <a class="btn btnDesign" routerLink="/productDesp/{{productList[0].productid}}">View Product</a>
+          </div>
+          <div class="card-body">
+            <span>{{productList[1].brand}}</span>
+            <h5 class="card-title">{{productList[1].productname}}</h5>
+            <p class="card-text">{{productList[1].productprice|currency:"INR"}}</p>
+            <a  class="btn btnDesign" routerLink="/productDesp/{{productList[1].productid}}">View Product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5 mb-3" >
+      <nav class="navbar navbar-light bg-light" style="background-color:#F5E6CA!important;">
+        <div class="searchForms">
+          <div class="container-fluid">
+            <div class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search By Brand" [(ngModel)]="byBrandName" aria-label="Search">
+              <button class="btn btnDesign" type="submit" (click)="searchByBrandOnClick()">Search</button>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search By Name" [(ngModel)]="byProductName" aria-label="Search">
+              <button class="btn btnDesign" (click)="searchByNameOnClick()" type="submit">Search</button>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search By ProductId" [(ngModel)]="byProductId" aria-label="Search">
+              <button class="btn btnDesign" (click)="searchByIdOnClick()" type="submit">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <h3 class="animate__animated mt-3" *ngIf="!isSearchingByBrand && !isSearchingByName && !isSearchingById" style="color:#F54748">All Products</h3>
+      <h3 class="animate__animated mt-3" *ngIf="isSearchingByBrand || isSearchingByName || isSearchingById" style="color:#F54748">Searched Products</h3>
+    </div>
+    <div class="container productDisp" *ngIf="!isSearchingByBrand && !isSearchingByName && !isSearchingById">
+        <div class="productDisps" *ngFor="let product of productList">
+            <div class="productCard">
+                  <div class="productCard__left">
+                    <span style="font-size: 1.1rem; font-weight: bolder;">{{product.brand}}</span>
+                    <span style="font-size: 1.7rem; margin-top: -5px;">{{product.productname}}</span>
+                  </div>
+                  <div class="productCard__right">
+                      <span style="font-size: 1.3rem;">{{product.productprice|currency:'INR'}}</span>
+                      <button class="btn btnDesign mt-2" routerLink="/productDesp/{{product.productid}}" >View Product</button>
+                  </div>
+              </div>
+          </div>
+    </div>
+    <div class="container productDisp" *ngIf="isSearchingByBrand && !isNull">
+      <div class="productDisps" *ngFor="let product of fetchedProductListByBrand">
+          <div class="productCard" *ngIf="!isNull">
+                <div class="productCard__left">
+                  <span style="font-size: 1.1rem; font-weight: bolder;">{{product.brand}}</span>
+                  <span style="font-size: 1.7rem; margin-top: -5px;">{{product.productname}}</span>
+                </div>
+                <div class="productCard__right">
+                    <span style="font-size: 1.3rem;">{{product.productprice|currency:'INR'}}</span>
+                    <button class="btn btnDesign mt-2" routerLink="/productDesp/{{product.productid}}" >View Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container productDisp"  *ngIf="isSearchingByName && !isNull">
+      <div class="productDisps">
+          <div class="productCard">
+                <div class="productCard__left">
+                  <span style="font-size: 1.1rem; font-weight: bolder;">{{fetchedProductListByName.brand}}</span>
+                  <span style="font-size: 1.7rem; margin-top: -5px;">{{fetchedProductListByName.productname}}</span>
+                </div>
+                <div class="productCard__right">
+                    <span style="font-size: 1.3rem;">{{fetchedProductListByName.productprice|currency:'INR'}}</span>
+                    <button class="btn btnDesign mt-2" routerLink="/productDesp/{{fetchedProductListByName.productid}}" >View Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container productDisp"  *ngIf="isSearchingById && !isNull">
+      <div class="productDisps" >
+          <div class="productCard">
+                <div class="productCard__left">
+                  <span style="font-size: 1.1rem; font-weight: bolder;">{{fetchedProductListById.brand}}</span>
+                  <span style="font-size: 1.7rem; margin-top: -5px;">{{fetchedProductListById.productname}}</span>
+                </div>
+                <div class="productCard__right">
+                    <span style="font-size: 1.3rem;">{{fetchedProductListById.productprice|currency:'INR'}}</span>
+                    <button class="btn btnDesign mt-2" routerLink="/productDesp/{{fetchedProductListById.productid}}" >View Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center mt-3" style="margin-bottom: 5vh;;" *ngIf="isNull">
+      <h5>No Products Available</h5>
+    </div>

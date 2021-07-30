@@ -1,0 +1,32 @@
+<div class="container mt-5" style="background-color: #F5E6CA; padding: 50px; width:50%; font-weight: bolder;border-radius: 20px;">
+    <div style="width: 100%;">
+        <img src="../../../assets/registerPic.png" height="100" width="100" alt="Login Pic" style="margin-left: 17vw;">
+        <h3 class="text-center mt-2" style="color:#F54748"><u>Registration Page</u></h3>
+    </div>
+    
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Id</label>
+        <input type="email" placeholder="Enter UserId" [(ngModel)]="userName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="passContainer">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" placeholder="Your password" [(ngModel)]="userPassword" class="form-control passInput" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                <input type="password" placeholder="Confirm password" [(ngModel)]="userConfirmPassword" class="form-control" id="exampleInputPassword1">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">First Name</label>
+            <input type="text" placeholder="Enter First Name" [(ngModel)]="userFirstName" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+            <input type="text" placeholder="Enter Last Name" [(ngModel)]="userLastName" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btnDesign" (click)="createOnClick()">Register</button>
+
+    <h6><a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="mt-3" >Already Registered?</a></h6>
+</div>

@@ -1,0 +1,5 @@
+package com.nagarro.backendApp.reviewApp.controller;
+
+public class ProductImageController {
+
+}

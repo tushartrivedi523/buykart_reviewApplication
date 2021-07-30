@@ -1,0 +1,29 @@
+.btnDesign{
+    background-color: #f3ce88;
+    color:#F54748;
+}
+.btnDesign:hover{
+    background-color: #ffc14e;
+}
+
+.viewProd{
+    /* border: 2px solid black; */
+    background-color: #F5E6CA;
+    border-radius: 5%;;
+    padding: 20px;
+    margin-bottom: 4vh;;
+
+}
+.content{
+    display: flex;
+    flex-direction: row;
+}
+.content__left{
+    width: 60%;
+    margin-left: 3vh;
+}
+.content__right{
+    width:35%;
+    margin-left: 5vw;
+    margin-top: 4vh;
+}

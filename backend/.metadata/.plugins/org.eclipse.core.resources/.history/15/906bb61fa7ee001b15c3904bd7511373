@@ -1,0 +1,5 @@
+package com.nagarro.backendApp.reviewApp.model;
+
+public class ProductImage {
+
+}

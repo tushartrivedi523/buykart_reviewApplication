@@ -1,0 +1,16 @@
+<div class="container mt-5" style="background-color: #F5E6CA; padding: 50px; width:40%; font-weight: bolder;border-radius: 20px;">
+    <div style="width: 100%;">
+        <img src="../../../assets/loginPic.png" height="100" width="100" alt="Login Pic" style="margin-left: 13vw;">
+    </div>
+    
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">User Id</label>
+        <input type="text" placeholder="abc123" class="form-control" id="exampleInputEmail1" [(ngModel)]="inputUserId" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" placeholder="Your password" class="form-control" id="exampleInputPassword1" [(ngModel)]="inputPassword" required>
+        </div>
+        <button type="submit" class="btn btnDesign" (click)="loginOnClick()">Login</button>
+    <h6><a [routerLink]="['/register']" routerLinkActive="router-link-active"  class="mt-3" >Not Yet Registered?</a></h6>
+</div>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbarContainer">
+  <div class="container-fluid">
+    <a class="navbar-brand navHeading" href="#" >Buykart.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" style="margin-left:3vw!important">
+          <a class="nav-link dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item navDropdownItems">Mobiles</a></li>
+            <li><a class="dropdown-item navDropdownItems">Electronics</a></li>
+            <li><a class="dropdown-item navDropdownItems">Books</a></li>
+            <li><a class="dropdown-item navDropdownItems">Games</a></li>
+            <li><a class="dropdown-item navDropdownItems">Clothing</a></li>
+            <li><a class="dropdown-item navDropdownItems">Home Appliances</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item navDropdownItems" >Gold Jewlerries</a></li>
+          </ul>
+        </li>
+      </ul>
+      <img src="../assets/carts.png" alt="Cart" class="img-fluid" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Cart" style="margin-right:2vw; cursor: pointer;" height="40" width="40" >
+      <form class="d-flex">
+        <button 
+        *ngIf="!message"
+        [routerLink]="['/login']" routerLinkActive="router-link-active"
+        class="btn navBarButton" 
+        type="submit">Login/Register</button>
+        <!-- <button 
+        *ngIf="message"
+        routerLinkActive="router-link-active"
+        class="btn navBarButton" 
+        (click)="logoutOnClick()"
+        type="submit">Logout</button> -->
+        <a href="#" class="btn navBarButton" *ngIf="message" (click)="logoutOnClick()">Logout</a>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="">
+  <router-outlet></router-outlet>
+</div>

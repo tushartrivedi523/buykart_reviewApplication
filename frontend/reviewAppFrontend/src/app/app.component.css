@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+.navbarContainer{
+    background-color: #F5E6CA!important;
+}
+.navHeading{
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    color: #F54748!important;
+}
+#navbarDropdown{
+    color: #F54748!important;
+    font-family: 'Archivo Black', sans-serif;
+}
+.navDropdownItems{
+    color:#FB9300;
+}
+.navBarButton{
+    background-color: #f3ce88;
+    color:#F54748;
+}
+.navBarButton:hover{
+    background-color: #ffc14e;
+}
+
+.header{
+    height:10vh;
+    /* background-color: #fd297adc; */
+    display: flex;
+    flex-direction: row;
+    color:black
+}
+.header__heading{
+    width: 55%;
+    padding-top: 2vh;
+    text-align: end;
+}
+.header__auth{
+    display: flex;
+    flex-direction: row;
+    width:45%;
+    padding: 2vh;
+    justify-content: flex-end;
+
+}
+.header__authButton{
+    border: 1px solid transparent;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: #b40448 ;
+}
+.header__authButton:hover{
+    background-color: #b404476c;
+    cursor: pointer;
+}
+.header__authButton a{
+    text-decoration: none;
+    color:black;
+    /* padding-bottom: 2px; */
+}

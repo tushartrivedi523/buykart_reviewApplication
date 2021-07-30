@@ -1,0 +1,19 @@
+<div class="container">
+    <h3 class="text-center mt-4">Post Review</h3>
+    <div style="padding:50px;">
+      <button class="btn btnDesign" style="margin-bottom: 3vh;" [routerLink]="['/dashboardAuth']" routerLinkActive="router-link-active" >Back</button>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Title</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="reviewTitle" placeholder="Enter Review Title">
+            </div>
+            <div class="form-group" style="margin-top:4vh;">
+              <label for="exampleInputPassword1">Content</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add complete review here" [(ngModel)]="reviewContent" rows="10"></textarea>
+            </div>
+            <div style="margin-top: 4vh;">
+                <button type="submit" (click)="createReviewOnClick()" class="btn btnDesign">Submit</button>
+            </div>
+            
+    </div>
+</div>
